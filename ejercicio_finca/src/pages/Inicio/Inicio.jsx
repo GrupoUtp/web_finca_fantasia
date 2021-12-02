@@ -25,8 +25,7 @@ const Inicio = () => {
          //console.log(respuesta.data);
             for (let index = 0; index < respuesta.data.length; index++) {
                 const element = respuesta.data[index];
-                console.log(element)
-                
+                console.log(element)                
                 
             }
         })
