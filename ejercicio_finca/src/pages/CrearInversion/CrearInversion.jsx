@@ -17,7 +17,7 @@ const handleSubmit = (e) => {
     return ( 
         <div>
           <div className="p-3 pb-md-4 mx-auto text-center">
-            <h1>Crear Inversion</h1>
+            <h1>Crear Comentario</h1>
           </div> 
               <div className="form-crear-inversion text-center"> 
                 <form onSubmit={handleSubmit}>

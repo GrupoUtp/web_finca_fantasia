@@ -2,9 +2,12 @@ import swal from "sweetalert";
 import Inversion from "./componentes/Inversion";
 import { Link, NavLink } from "react-router-dom";
 import Carousel from '../.././components/Carousel';
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 
 const Inicio = () => {
+    const [comentario, setComentario] = useState([]);
     const fecha = new Date().toLocaleString();
     const inversiones = [
         {_id:1, nombre_coin: "Habitación Sweet", valor_invertido:"Habitación VIP cuenta con acceso principal al balcón, hamaca y una vista espectacular a la hermosa villavicencio", coins:"$100.000"},
@@ -14,6 +17,26 @@ const Inicio = () => {
         {_id:5, nombre_coin: "Ocaciones Especiales", valor_invertido:"Organizamos tu velada romántica, una deliciosa cena a la luz de la luna, decoración de la habitación con un tinte de romance para esa persona especial", coins:"Varios"},
         {_id:6, nombre_coin: "Por Días", valor_invertido:"Alquila toda la finca por días, celebra cumpleaños, matrimonios, solo tú familia o amigos para disfrutar de completa privacidad como en tu hogar", coins:"Según el día"},
     ];
+
+    const obtenerComentario = (comentario) => {
+        axios.get("http://localhost:5000/api/comentarios")
+        .then((respuesta) => {
+            setComentario(respuesta.data);
+         //console.log(respuesta.data);
+            for (let index = 0; index < respuesta.data.length; index++) {
+                const element = respuesta.data[index];
+                console.log(element)
+                
+                
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    };
+    useEffect(() => {
+        obtenerComentario();
+    },[]);
 
     const handleDelete = (inversion) => {
         swal({
@@ -42,10 +65,11 @@ const Inicio = () => {
             <div className="row row-cols-1 row-cols-md-3 mb-3 text-center">
                 {inversiones.map((inversion) => (
                    
-                   <Inversion key={inversion._id} 
-                   inversion={inversion} 
-                   handleDelete={handleDelete}/>
+                    <Inversion key={inversion._id} 
+                    inversion={inversion} 
+                    />
                     
+
                 ))}
             </div>
         </div>

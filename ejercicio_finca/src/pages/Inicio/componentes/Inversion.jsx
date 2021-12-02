@@ -31,9 +31,9 @@ const Inversion = (props) => {
                         {0}
                         <small className="h6 text-muted fw-ligh d-block">Actual</small>
                     </h3> */}
-                    <ul className="list_unstyled mt-3 mb-4">
+                    {/* <ul className="list_unstyled mt-3 mb-4">
                         <li>{inversion.fecha}</li>
-                    </ul>
+                    </ul> */}
                     <button type="button"
                     className="w-100 btn btn-lg btn-outline-primary"
                     onClick={() => {
