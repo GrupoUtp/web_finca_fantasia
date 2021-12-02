@@ -1,6 +1,8 @@
 import swal from "sweetalert";
-import Inversion from "./components/Inversion";
+import Inversion from "./componentes/Inversion";
 import { Link, NavLink } from "react-router-dom";
+import Carousel from '../.././components/Carousel';
+
 
 const Inicio = () => {
     const fecha = new Date().toLocaleString();
@@ -33,6 +35,8 @@ const Inicio = () => {
     };
 
     return ( 
+        <div>
+        <Carousel />              
         <div className="p-3 pb-md-4 mx-auto text-center">
             <h1 className="display-4 fw-normal">Finca Fantasia de la Montaña</h1>
             <div className="row row-cols-1 row-cols-md-3 mb-3 text-center">
@@ -44,6 +48,7 @@ const Inicio = () => {
                     
                 ))}
             </div>
+        </div>
         </div>
      );
 };

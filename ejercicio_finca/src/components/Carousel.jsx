@@ -1,5 +1,10 @@
+import luna from "../assets/images/finca_luna.jpg"
+import fincatoda from "../assets/images/finca_toda.jpg"
+import portada from "../assets/images/finca_portada.jpg"
+
 const Carousel = () => {
     return ( 
+
 
       <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
@@ -9,13 +14,13 @@ const Carousel = () => {
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="https://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/1024/Bitcoin-BTC-icon.png" class="d-block w-100" alt="..." height="400px"/>
+      <img src={portada} class="d-block w-100" alt="..." height="400px"/>
     </div>
     <div class="carousel-item">
-      <img src="./assets/images/finca_toda" class="d-block w-100" alt="..." height="400px"/>
+      <img src={fincatoda} class="d-block w-100" alt="..." height="400px"/>
     </div>
     <div class="carousel-item">
-      <img src="assets/images/finca_cabaña.jpg" class="d-block w-100" alt="..." height="400px"/>
+      <img src={luna} class="d-block w-100" alt="..." height="400px"/>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

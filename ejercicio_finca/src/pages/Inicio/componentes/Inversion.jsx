@@ -1,8 +1,10 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+
 
 const Inversion = (props) => {
     //console.log(props);
+    let navigate = useNavigate();
     const { inversion, handleDelete  } = props;
 
     //console.log("props componente inversion", inversion);
@@ -36,7 +38,8 @@ const Inversion = (props) => {
                     className="w-100 btn btn-lg btn-outline-primary"
                     onClick={() => {
                         if (inversion._id ==1){
-                            <NavLink className="nav-link" to="/Sweet"></NavLink>
+                            navigate("sweet");
+                            // <NavLink className="nav-link" to="/sweet"></NavLink>
                             console.log(inversion._id);
                     }
                             console.log(inversion._id);
