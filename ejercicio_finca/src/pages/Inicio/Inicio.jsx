@@ -31,7 +31,7 @@ const Inicio = () => {
             }
         })
         .catch((error) => {
-            console.log(error);
+            console.log(error); 
         });
     };
     useEffect(() => {
