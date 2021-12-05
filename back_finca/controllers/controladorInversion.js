@@ -26,6 +26,19 @@ module.exports.comentar_post = (req, res) => {
 };
 
 module.exports.comentar_delete = (req, res) => {
-    console.log(req);
-    res.send("Delete Inversiones");
+    console.log(req.params);
+    const { id } = req.params;
+    Inversion.deleteOne({ _id: id})
+    .then((respuesta) => {
+        console.log(respuesta);
+        res.status(200).json(respuesta);
+    })
+    .catch((error) => {
+        console.log(error);
+        res.status(400).json(error);
+    });
 };
+
+// db.inversions.insertOne({
+//     comentario: "buen servicio",
+// })

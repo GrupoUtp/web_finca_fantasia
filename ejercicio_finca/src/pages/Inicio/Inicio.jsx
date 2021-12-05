@@ -4,11 +4,12 @@ import { Link, NavLink } from "react-router-dom";
 import Carousel from '../.././components/Carousel';
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Sweet from "../Sweet/Sweet";
 
 
 const Inicio = () => {
-    const [comentario, setComentario] = useState([]);
-    const fecha = new Date().toLocaleString();
+    const [comentarios, setComentarios] = useState([]);
+    // const fecha = new Date().toLocaleString();
     const inversiones = [
         {_id:1, nombre_coin: "Habitación Sweet", valor_invertido:"Habitación VIP cuenta con acceso principal al balcón, hamaca y una vista espectacular a la hermosa villavicencio", coins:"$100.000"},
         {_id:2, nombre_coin: "Habitación Doble", valor_invertido:"Ideal para parejas, cuenta con cama doble muy comoda, baño la privacidad perfecta para pasar momentos inolvidables ", coins:"$80.000"},
@@ -18,16 +19,12 @@ const Inicio = () => {
         {_id:6, nombre_coin: "Por Días", valor_invertido:"Alquila toda la finca por días, celebra cumpleaños, matrimonios, solo tú familia o amigos para disfrutar de completa privacidad como en tu hogar", coins:"Según el día"},
     ];
 
-    const obtenerComentario = (comentario) => {
+    const obtenerComentario = () => {
         axios.get("http://localhost:5000/api/comentarios")
         .then((respuesta) => {
-            setComentario(respuesta.data);
-         //console.log(respuesta.data);
-            for (let index = 0; index < respuesta.data.length; index++) {
-                const element = respuesta.data[index];
-                console.log(element)                
-                
-            }
+            setComentarios(respuesta.data);
+            console.log(respuesta.data);
+            
         })
         .catch((error) => {
             console.log(error); 
@@ -68,8 +65,15 @@ const Inicio = () => {
                     inversion={inversion} 
                     />
                     
-
                 ))}
+                {/* {comentarios.map((comentario) => (
+                   
+                   <Sweet key={comentario._id} 
+                   comentario={comentario}
+                   obtenerComentario={obtenerComentario} 
+                   />
+                   
+               ))} */}
             </div>
         </div>
         </div>

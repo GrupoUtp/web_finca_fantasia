@@ -6,7 +6,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 const Sweet = (props) => {
         let navigate = useNavigate();
         const { comentario, obtenerComentario  } = props;
-        
+        console.log(props)
     return ( 
         <React.Fragment>            
         <div className="col">
@@ -17,7 +17,7 @@ const Sweet = (props) => {
                 <div className="card-body">
                     <h4 className="card-title pricing-card-title">
                     <small className="h6 text-muted fw-light d-block">
-                            Sobre este servicio
+                            Comentarios
                     </small>                                            
                         
                     </h4>

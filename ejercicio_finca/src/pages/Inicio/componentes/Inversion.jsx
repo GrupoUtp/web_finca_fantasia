@@ -2,11 +2,11 @@ import React from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 
 
-const Inversion = (props) => {
+const Inversion = (props) => { 
     //console.log(props);
     let navigate = useNavigate();
     const { inversion, handleDelete  } = props;
-
+    // console.log(props)
     //console.log("props componente inversion", inversion);
     return (
         <React.Fragment>
@@ -51,6 +51,7 @@ const Inversion = (props) => {
                 </div>
             </div>
         </div>
+        
     </React.Fragment>
     );
 };
