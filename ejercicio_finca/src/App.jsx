@@ -8,7 +8,7 @@ import Sweet from "./pages/Sweet/Sweet";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App"> 
       <div>
         <NavBar />
       </div>
