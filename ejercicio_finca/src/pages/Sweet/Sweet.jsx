@@ -1,43 +1,35 @@
-import React from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import Observacion from "./compone/Observacion";
 
-
-
-const Sweet = (props) => {
-        let navigate = useNavigate();
-        const { comentario, obtenerComentario  } = props;
-        console.log(props)
+const Sweet = () => {
+    const [comentarios, setComentarios] = useState([]);
+    const obtenerComentario = () => {
+        axios.get("http://localhost:5000/api/comentarios")
+        .then((respuesta) => {
+            setComentarios(respuesta.data);
+            console.log(respuesta.data);
+            
+        })
+        .catch((error) => {
+            console.log(error); 
+        });
+    };
+    useEffect(() => {
+        obtenerComentario();
+    },[]);
     return ( 
-        <React.Fragment>            
-        <div className="col">
-            <div className="card mb-4 rounded-3 shadow-sm">
-                <div className="card-header py-3">                    
-                    <h4 className="my-0 fw-normal">{comentario}</h4>
-                </div>
-                <div className="card-body">
-                    <h4 className="card-title pricing-card-title">
-                    <small className="h6 text-muted fw-light d-block">
-                            Comentarios
-                    </small>                                            
-                        
-                    </h4>
-                    
-                    
-                    <button type="button"
-                    className="w-100 btn btn-lg btn-outline-primary"
-                    onClick={() => {
-                       
-                            console.log("");
-                        // handleDelete(inversion)
-                    }}
-                    >
-                        Ver más
-                    </button>
-                </div>
-            </div>
+        <div>
+        {comentarios.map((comentario) => (
+                   
+                   <Observacion key={comentario._id} 
+                   comentario={comentario}
+                //    obtenerComentario={obtenerComentario} 
+                   />
+                   
+        ))}
         </div>
-    </React.Fragment>
-    );
-};
+     );
+}
  
 export default Sweet;

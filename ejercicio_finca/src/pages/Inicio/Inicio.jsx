@@ -8,7 +8,7 @@ import Sweet from "../Sweet/Sweet";
 
 
 const Inicio = () => {
-    const [comentarios, setComentarios] = useState([]);
+    
     // const fecha = new Date().toLocaleString();
     const inversiones = [
         {_id:1, nombre_coin: "Habitación Sweet", valor_invertido:"Habitación VIP cuenta con acceso principal al balcón, hamaca y una vista espectacular a la hermosa villavicencio", coins:"$100.000"},
@@ -19,20 +19,7 @@ const Inicio = () => {
         {_id:6, nombre_coin: "Por Días", valor_invertido:"Alquila toda la finca por días, celebra cumpleaños, matrimonios, solo tú familia o amigos para disfrutar de completa privacidad como en tu hogar", coins:"Según el día"},
     ];
 
-    const obtenerComentario = () => {
-        axios.get("http://localhost:5000/api/comentarios")
-        .then((respuesta) => {
-            setComentarios(respuesta.data);
-            console.log(respuesta.data);
-            
-        })
-        .catch((error) => {
-            console.log(error); 
-        });
-    };
-    useEffect(() => {
-        obtenerComentario();
-    },[]);
+    
 
     const handleDelete = (inversion) => {
         swal({
@@ -66,14 +53,7 @@ const Inicio = () => {
                     />
                     
                 ))}
-                {/* {comentarios.map((comentario) => (
-                   
-                   <Sweet key={comentario._id} 
-                   comentario={comentario}
-                   obtenerComentario={obtenerComentario} 
-                   />
-                   
-               ))} */}
+                
             </div>
         </div>
         </div>
