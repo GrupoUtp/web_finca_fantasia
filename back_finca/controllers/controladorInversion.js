@@ -19,7 +19,7 @@ module.exports.comentar_post = (req, res) => {
             console.log(respuesta);
             res.status(200).json(respuesta);
         })
-        .catch((error) => {
+        .catch((error) => { 
             console.log(error);
             res.status(400).json(error);
         });       
