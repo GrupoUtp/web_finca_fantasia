@@ -1,5 +1,6 @@
 import swal from "sweetalert";
 import Inversion from "./componentes/Inversion";
+import Observacion from "../Sweet/compone/Observacion";
 import { Link, NavLink } from "react-router-dom";
 import Carousel from '../.././components/Carousel';
 import { useEffect, useState } from "react";
@@ -21,25 +22,30 @@ const Inicio = () => {
 
     
 
-    const handleDelete = (inversion) => {
+    const handleDelete = (comentario) => {
         swal({
-            title: "Estás seguro?",
-            text: "Si borras la inversión, no se podrá recuperar",
+            title: "Estás seguro(a)?",
+            text: "Si borras el comentario, no se podrá recuperar",
             icon: "warning",
             buttons: true,            
             dangerMode: true,
           })          
-          .then((willDelete) => {
-              if (inversion._id ==1)
-              <Link className="nav-link" to="/Sweet"></Link>
+          .then((willDelete) => {              
               if (willDelete) {
-              swal("La inversión " + inversion._id + " fue borrada",{
+                  axios.delete("http://localhost:5000/api/comentario/" + comentario._id)
+                  .then((respuesta) => {
+                  swal("El comentario " + comentario._id + " fue borrado",{
                   icon: "success",
-              });        
-            }
-        });
-    };
-
+                });
+                  console.log(respuesta); 
+                  //obtenerComentarios();       
+                })
+                  .catch((error) =>{
+                  console.log(error);                  
+            });
+        }
+    });
+};
     return ( 
         <div>
         <Carousel />              
@@ -58,6 +64,6 @@ const Inicio = () => {
         </div>
         </div>
      );
-};
+    };
 
 export default Inicio ;

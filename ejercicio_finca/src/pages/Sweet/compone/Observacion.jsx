@@ -27,10 +27,10 @@ const Observacion = (props) => {
                     onClick={() => {
                        
                             console.log("");
-                        // handleDelete(inversion)
+                            //handleDelete(comentario);
                     }}
                     >
-                        Ver más
+                        Borrar
                     </button>
                 </div>
             </div>
