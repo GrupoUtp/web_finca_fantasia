@@ -38,10 +38,24 @@ const Inversion = (props) => {
                     className="w-100 btn btn-lg btn-outline-primary"
                     onClick={() => {
                         if (inversion._id ==1){
-                            navigate("sweet");
-                            // <NavLink className="nav-link" to="/sweet"></NavLink>
-                            console.log(inversion._id);
-                    }
+                            navigate("vip");                            
+                        }
+                        if (inversion._id ==2){
+                            navigate("Hab-doble");                            
+                        }
+                        if (inversion._id ==3){
+                            navigate("Hab-familiar");                            
+                        }
+                        if (inversion._id ==4){
+                            navigate("Atracciones");                            
+                        }
+                        if (inversion._id ==5){
+                            navigate("Atracciones");                            
+                        }
+                        if (inversion._id ==6){
+                            navigate("Atracciones");                            
+                        }
+
                             console.log(inversion._id);
                         // handleDelete(inversion)
                     }}
