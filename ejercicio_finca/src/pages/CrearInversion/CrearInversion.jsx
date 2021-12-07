@@ -4,12 +4,7 @@ import axios from "axios";
 
 const CrearInversion = () => {      
     const [comentario, setComentario] = useState("");
-    const [inversion, setInversion] = useState("");
-    const [coins, setCoins] = useState("");
-    const [month, setMonth] = useState(() => new Date().getUTCMonth() + 1);
-    const [day, setDay] = useState(() => new Date().getUTCDate());
-    const [year, setYear] = useState(() => new Date().getUTCFullYear());
-
+    
 
 const handleSubmit = (e) => {
     e.preventDefault();  

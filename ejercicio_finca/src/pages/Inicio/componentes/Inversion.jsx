@@ -5,7 +5,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 const Inversion = (props) => { 
     //console.log(props);
     let navigate = useNavigate();
-    const { inversion, handleDelete  } = props;
+    const { inversion, inversiones  } = props;
     // console.log(props)
     //console.log("props componente inversion", inversion);
     return (
