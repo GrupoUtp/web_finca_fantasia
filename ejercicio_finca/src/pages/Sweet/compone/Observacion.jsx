@@ -39,14 +39,14 @@ const Observacion = (props) => {
         <React.Fragment>            
         <div className="col">
             <div className="card mb-4 rounded-3 shadow-sm">
+                <small className="h6 text-muted fw-light d-block">
+                    Comentario
+                </small> 
                 <div className="card-header py-3">                    
                     <h4 className="my-0 fw-normal">{comentario.comentario}</h4>
                 </div>
                 <div className="card-body">
-                    <h4 className="card-title pricing-card-title">
-                    <small className="h6 text-muted fw-light d-block">
-                            Comentarios
-                    </small>                                            
+                    <h4 className="card-title pricing-card-title">                                                               
                         
                     </h4>
                     
@@ -59,7 +59,7 @@ const Observacion = (props) => {
                             handleDelete(comentario);
                     }}
                     >
-                        Borrar
+                        Borrar comentario
                     </button>
                 </div>
             </div>
